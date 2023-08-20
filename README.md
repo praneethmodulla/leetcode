@@ -1,2 +1,2 @@
 # leetcode
-LeetCode Problems
+This repository is only for LeetCode problems solved by me.
