@@ -1,0 +1,12 @@
+class Solution {
+    public int maxProduct(int[] nums) {
+        PriorityQueue<Integer> heap = new PriorityQueue<>(Comparator.reverseOrder());
+        for(int num : nums){
+            heap.add(num);
+        }
+        int max1 = heap.remove();
+        int max2 = heap.remove();
+
+        return (max1 - 1)*(max2 - 1);  
+    }
+}
