@@ -1,0 +1,27 @@
+class Solution {
+    public boolean backspaceCompare(String s, String t) {
+        StringBuilder sb1 = new StringBuilder();
+        StringBuilder sb2 = new StringBuilder();
+
+        for(int i = 0; i < s.length(); i++){
+            if(s.charAt(i) != '#'){
+                sb1.append(s.charAt(i));
+            } else if(sb1.length() != 0 && s.charAt(i) == '#'){
+                sb1.deleteCharAt(sb1.length() - 1);
+            }
+        }
+
+        for(int j = 0; j < t.length(); j++){
+            if(t.charAt(j) != '#'){
+                sb2.append(t.charAt(j));
+            } else if(sb2.length() != 0 && t.charAt(j) == '#'){
+                sb2.deleteCharAt(sb2.length() - 1);
+            }
+        }
+
+        if(sb1.toString().equals(sb2.toString())){
+            return true;
+        }
+        return false;
+    }
+}
