@@ -15,13 +15,8 @@ class Solution {
         }
 
         ListNode temp = reverseList(head.next);
+        head.next.next = head;
         head.next = null;
-        ListNode check = temp;
-        while(check.next != null){
-            check = check.next;
-        }
-
-        check.next = head;
 
         return temp;
     }
