@@ -4,13 +4,16 @@ class Solution {
         if(n <= 2){
             return n;
         }
-        dp[1] = 1;
-        dp[2] = 2;
 
+        int prev2 = 1;
+        int prev = 2;
+        int curr = 0;
         for(int i = 3; i <=n; i++){
-            dp[i] = dp[i - 1] + dp[i - 2];
+            curr = prev2 + prev;
+            prev2 = prev;
+            prev = curr;
         }
 
-        return dp[n];
+        return curr;
     }
 }
